@@ -1,5 +1,5 @@
 
-## Folder Structure
+# Folder Structure [WIP]
 
 * `_examples`   --> test and example code
 * `database`   --> folder containing the data about the slabs

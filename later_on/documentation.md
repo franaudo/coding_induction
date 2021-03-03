@@ -1,4 +1,4 @@
-## How to build your documentation with Sphinx
+# How to build your documentation with Sphinx [WIP]
 
 Here you can find detailed info about `sphinx` and how to get started with `rst`: <https://sphinx-tutorial.readthedocs.io/start/>. You probably won't need to do any modification to the source files for the documentation, but it is always good to learn new stuff! ;)
 
