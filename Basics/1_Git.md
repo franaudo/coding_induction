@@ -31,13 +31,13 @@ You will run these commands all the time! They will allow you to keep track of y
 
 <img src=https://wac-cdn.atlassian.com/dam/jcr:746be214-eb99-462c-9319-04a4d2eeebfa/01.svg>
 
-A very useful way of organising your repository is using `branches`.
+A very useful way of organising your repository is using `branches` .
 
 Every repository has at least one branch (the trunk of the tree if you want): on this branch, usually called `master` or `main` (to avoid any reference to slavery), there is the first commit (initialization of the repository). You could use this as only branch and keep committing onto it (and it is often done), but sometimes you need to make some changes that will likely disrupt the functionality of the the code, for you but also for the other developers!
 
 One way to solve this issue would be to not push your changes and work only on your local repository until everything is resolved, but this would mean that you will not be able to collaborate with others (and also you will not have any backup on the remote).
 
-A better way of dealing with it is to create a `branch`, i.e. a diversion from the commit history at a specific time. Once you have created a branch and switched to it, all your changes and commits will happen on this new copy of the previous code, meaning that they will not affect the other branches (especially the `main`).
+A better way of dealing with it is to create a `branch` , i.e. a diversion from the commit history at a specific time. Once you have created a branch and switched to it, all your changes and commits will happen on this new copy of the previous code, meaning that they will not affect the other branches (especially the `main` ).
 
 These are the main commands to create and operate with branches:
 
@@ -49,7 +49,7 @@ These are the main commands to create and operate with branches:
 6. `git push origin <name-of-the-new-branch>` -> pushes the new branch on the remote and links it your local branch
 7. `git branch -d <branch>` -> delete the branch (safe: if there are unmerged changes git will prevent you to do it)
 8. `git branch -D <branch>` -> force the deletion of the branch (be careful!)
-9. 'git push origin --delete <branch>  -> delete the branch also from the remote.
+9. `git push origin --delete <branch>`  -> delete the branch also from the remote.
 
 Once your are done with your branch you can `merge` it with some other parts of the code. Depending on the nature of your changes, this can be a smooth opertion or, most likely, create some conflict (both you and someone else changed the same part of the code).
 
@@ -58,7 +58,7 @@ Dealing with merge conflict is outside of the scope of this tutorial.
 ### Working with forks
 
 Forks are not really a `git` concept, but they were introduced by `GitHub` and now are basically implemented by every repo hosting provider.
-A `fork` is basically a *special* clone of the repository: when you create a `fork`, a new repository is created in your GitHub account, which is linked to the main one. You have now full control of this repository (your are the admin), but you can still see if changes are made in the main repo and in case sync this changes with your version. Most importantly, you can chage the code yourself without interfering with other people work.
+A `fork` is basically a *special* clone of the repository: when you create a `fork` , a new repository is created in your GitHub account, which is linked to the main one. You have now full control of this repository (your are the admin), but you can still see if changes are made in the main repo and in case sync this changes with your version. Most importantly, you can chage the code yourself without interfering with other people work.
 
 These are the most useful commands when dealing with forks:
 
@@ -67,9 +67,23 @@ These are the most useful commands when dealing with forks:
 2. `git fetch upstream` -> Fetch the branches and their respective commits from the upstream repository
 3. `git pull upstream <branch>` -> merge the latest changes from the main repo
 
-However, at some point you might want to merge your code into the main repository. This is done creating a so called `pull request`. I have always found this name confusing and I usually think of it as a `merge request`: you are asking the main developer to review your code and merge it into the main repository.
+However, at some point you might want to merge your code into the main repository. This is done creating a so called `pull request` . I have always found this name confusing and I usually think of it as a `merge request` : you are asking the main developer to review your code and merge it into the main repository.
 
-You can create `pull requests` directly from GitHub: <https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork>
+You can create `pull requests` directly from GitHub:
+
+This video explains the concept: <https://www.gitkraken.com/learn/git/tutorials/what-is-a-pull-request-in-git>
+
+The basic steps are:
+
+1. fork the repository (directly from github)
+2. clone your own fork on your machine (`git clone <link-to-the-repository>`)
+3. make all the changes you want to make: remeber, this is now your own repository and you can do anything with it.
+4. tell git to keep track of your changes (`git add .`)
+5. commit your changes (`git commit -am "some_clever-message"`). You can create as many commits as you want.
+6. push your changes to your fork (`git push`)
+7. go back on github and click on create a pull request (there should be a green button that you can click)
+8. follow the instructions and add some comments if you want
+9. well...that's it ;)
 
 ## Git tools
 
